@@ -1,0 +1,15 @@
+numberOfJobs = 4313
+executable = reco.sh
+arguments = $(ProcId)
+
+log = /home/pgiri/test/livetime_A4_$(ProcId).log
+output = /data/ana/ARA/ARA04/scratch/spark/livetime_A4_$(ProcId).out
+error = /data/ana/ARA/ARA04/scratch/spark/livetime_A4_$(ProcId).err
+
+transfer_input_files = livetime_finder.py,A5.txt
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+
+request_memory = 1GB
+
+queue $(numberOfJobs:1)
